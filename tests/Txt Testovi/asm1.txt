@@ -1,0 +1,28 @@
+#INFO SEKCIJA: 
+Start address: 2
+Ime:	Size:	Start:	
+.data	20	2
+.bss	10	22
+.rodata	1	32
+
+#TABELA SIMBOLA
+Labela:		Sekcija:	Offset		Scope		Redni_broj	
+		UND		00		L		0
+.data		.data		00		L		1
+c		.data		08		L		2
+.bss		.bss		00		L		3
+d		.bss		04		L		4
+.rodata		.rodata		00		L		5
+a		UND		00		G		6
+
+#DATA SEKCIJA: 
+0500 0000 04000000 04000000 04000000 F2FFFFFF 
+
+#DATA_REL SEKCIJA: 
+Offset:		Tip:	Vr:	
+00000002	R_386_16	6
+00000008	R_386_16	3
+0000000C	R_386_16	3
+
+#RODATA SEKCIJA: 
+37

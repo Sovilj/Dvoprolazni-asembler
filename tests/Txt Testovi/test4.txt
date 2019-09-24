@@ -1,0 +1,61 @@
+.global x,b,c
+.global printf
+.data
+niz:
+    .word &cont
+    .word cont
+    .word -20
+
+    .long -2
+    .long cont
+    .long &cont
+
+    .char 1
+    .char 255
+
+    .skip 8
+    .align 20
+.rodata
+    .char 4
+    .word -3
+    .long -19
+    .align 10
+.bss
+    .skip 8
+    .align 10
+.text
+a:
+    pop a
+    pop *20
+    pop r0
+    pop r0[32]
+    pop r0[x]
+
+    add r0,20
+    add r0,&a
+    add r0,a
+    add r0,*20
+    add r0,r1
+    add r0,r1[32]
+    add r0,r1[a]
+
+    push 20
+    push &a
+    push a
+    push *20
+    push r3
+    push r4[-4]
+    push r4[a]
+
+    jmp x
+    jmp &x
+    jmp r2
+    jmp r3[32]
+    jmp 20
+    jmp *20
+    jmp $x
+cont:
+    add r0,r0
+    ret
+
+.end

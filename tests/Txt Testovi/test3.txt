@@ -1,0 +1,35 @@
+.global a,b,c
+.global printf
+.text
+add r1,r1[4]
+jmpgt next
+b: testeq r1,c
+noteq r1,&b
+sub r1,1
+shl r2,2
+popgt *20
+moval r1,&b
+next: push r5[20]
+jmpgt $d
+jmpne $a
+add r1,r4[a]
+push 1
+push &a
+call printf
+mul r1,r4
+.data
+.long 10
+a: .word b
+info: .char 1
+.align 4
+.word &a
+.word &b
+.word &c
+.long 1234
+.long 5678
+.bss
+c: .skip 10
+.rodata
+d: .long 4
+.char 55
+.end

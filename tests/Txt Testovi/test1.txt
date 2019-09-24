@@ -1,0 +1,16 @@
+.global a
+.data
+.word 5
+.word &a
+.long 4
+c:
+.long d
+.long &d
+.long -14
+.bss
+.skip 4
+d: 
+.align 10
+.rodata
+.char 55
+.end
